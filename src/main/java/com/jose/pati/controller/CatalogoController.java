@@ -1,9 +1,6 @@
 package com.jose.pati.controller;
 
-import com.jose.pati.enums.Color;
-import com.jose.pati.enums.Material;
-import com.jose.pati.enums.Referencia;
-import com.jose.pati.enums.Talla;
+import com.jose.pati.enums.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,6 +33,10 @@ public class CatalogoController {
 
             case "referencia":
                 return ResponseEntity.ok(Arrays.stream(Referencia.values())
+                        .map(Enum::name)
+                        .collect(Collectors.toList()));
+            case "mesa":
+                return ResponseEntity.ok(Arrays.stream(Mesa.values())
                         .map(Enum::name)
                         .collect(Collectors.toList()));
 
