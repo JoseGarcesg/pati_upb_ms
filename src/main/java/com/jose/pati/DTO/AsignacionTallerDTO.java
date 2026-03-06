@@ -9,6 +9,7 @@ public class AsignacionTallerDTO {
     private String confeccionista;
     private LocalDate fechaEstimada;
     private String taller;
+    private Long idCorte;
     private String referencia;
     private Integer cantidad;
 }

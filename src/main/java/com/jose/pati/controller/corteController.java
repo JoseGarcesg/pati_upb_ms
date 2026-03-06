@@ -1,5 +1,6 @@
 package com.jose.pati.controller;
 
+import com.jose.pati.DTO.CorteDisponibleDTO;
 import com.jose.pati.model.Corte;
 import com.jose.pati.service.CorteService;
 import lombok.RequiredArgsConstructor;
@@ -31,5 +32,10 @@ public class corteController {
             @PathVariable String estado
     ) {
         return ResponseEntity.ok(corteService.actualizarEstado(id, estado));
+    }
+
+    @GetMapping("/disponibles")
+    public ResponseEntity<List<CorteDisponibleDTO>> listarDisponibles(){
+        return ResponseEntity.ok(corteService.listarDisponibles());
     }
 }

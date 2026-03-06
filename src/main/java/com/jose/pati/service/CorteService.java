@@ -1,6 +1,8 @@
 package com.jose.pati.service;
 
+import com.jose.pati.DTO.CorteDisponibleDTO;
 import com.jose.pati.enums.EstadoCorte;
+import com.jose.pati.mapper.CorteMapper;
 import com.jose.pati.model.Corte;
 import com.jose.pati.repository.CorteRepository;
 import lombok.RequiredArgsConstructor;
@@ -40,5 +42,12 @@ public class CorteService {
 
         corte.setEstado(estadoCorte);
         return  corteRepository.save(corte);
+    }
+
+    public List<CorteDisponibleDTO> listarDisponibles(){
+        return corteRepository.findByEstado(EstadoCorte.SIN_ASIGNAR)
+                .stream()
+                .map(CorteMapper::toDisponibleDTO)
+                .toList();
     }
 }

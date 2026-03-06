@@ -14,7 +14,7 @@ public class AsignacionTallerMapper {
         dto.setTaller(a.getTaller().getNombre());
         dto.setReferencia(a.getCorte().getReferencia().toString());
         dto.setCantidad(a.getCorte().getCantidadProgramada());
-
+        dto.setIdCorte(a.getCorte().getId());
         return dto;
     }
 }

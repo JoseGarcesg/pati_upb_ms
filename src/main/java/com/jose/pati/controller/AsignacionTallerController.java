@@ -30,4 +30,10 @@ public class AsignacionTallerController {
     public ResponseEntity<List<AsignacionTallerDTO>> listar() {
         return ResponseEntity.ok(asignacionTallerService.listar());
     }
+
+    @DeleteMapping("/{asignacionId}")
+    public ResponseEntity<Void> eliminarPorId(@PathVariable Long asignacionId){
+        asignacionTallerService.eliminar(asignacionId);
+        return ResponseEntity.noContent().build();
+    }
 }

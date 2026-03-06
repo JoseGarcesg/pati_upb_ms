@@ -65,4 +65,17 @@ public class AsignacionTallerService {
                 .map(AsignacionTallerMapper::toDTO)
                 .toList();
     }
+
+    @Transactional
+    public void eliminar(Long id){
+        AsignacionTaller asignacionTaller = asignacionTallerRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Asignación no encontrada"));
+
+        Corte corte = asignacionTaller.getCorte();
+
+        // al eliminar la asignación el corte vuelve a SIN_ASIGNAR
+        corte.setEstado(EstadoCorte.SIN_ASIGNAR);
+
+        asignacionTallerRepository.delete(asignacionTaller);
+    }
 }
