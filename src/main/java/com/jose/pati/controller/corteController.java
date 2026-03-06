@@ -24,4 +24,12 @@ public class corteController {
     public ResponseEntity<List<Corte>> listarCortes() {
         return ResponseEntity.ok(corteService.listarCortes());
     }
+
+    @PatchMapping("/{id}/estado/{estado}")
+    public ResponseEntity<Corte> actualizarEstado(
+            @PathVariable Long id,
+            @PathVariable String estado
+    ) {
+        return ResponseEntity.ok(corteService.actualizarEstado(id, estado));
+    }
 }
