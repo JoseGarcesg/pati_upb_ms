@@ -32,7 +32,7 @@ Frontend
 1. Clonar repositorio
 
 
-git clone https://github.com/usuario/repositorio
+git clone [pati_upb_ms](https://github.com/JoseGarcesg/pati_upb_ms)
 
 
 2. Entrar al proyecto
@@ -61,7 +61,11 @@ http://localhost:8080/h2-console
 
 ### Frontend
 
-1. Entrar a la carpeta frontend
+1. Clonar repositorio de frontend
+
+
+git clone [pati-frontend](https://github.com/JoseGarcesg/pati_upb_ms)
+
 
 
 cd frontend
