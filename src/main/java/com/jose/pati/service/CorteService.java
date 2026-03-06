@@ -2,7 +2,6 @@ package com.jose.pati.service;
 
 import com.jose.pati.enums.EstadoCorte;
 import com.jose.pati.model.Corte;
-import com.jose.pati.model.Taller;
 import com.jose.pati.repository.CorteRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
